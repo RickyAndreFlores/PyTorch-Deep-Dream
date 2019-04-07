@@ -8,13 +8,11 @@ var folder = __dirname + "/images/"; // would be whereever images are stored
 var user_clicked = true; // this would somehow communicated from front end
 if(user_clicked)
 { 
-
-	var string; 
 	
 	fs.readdirSync(folder).forEach(file =>
 	{
 
-		full_command = command + "--input_image " + "images/" + file; 
+		var full_command = command + "--input_image " + "images/" + file; 
         	console.log(full_command);
 		shell.exec(full_command);
 

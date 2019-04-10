@@ -14,7 +14,7 @@ from utils import deprocess, preprocess, clip
 
 def dream(image, model, iterations, lr):
     """ Updates the image to maximize outputs for n iterations """
-    Tensor = torch.cuda.FloatTensor if torch.cuda.is_available else torch.FloatTensor
+    Tensor = torch.FloatTensor
     image = Variable(Tensor(image), requires_grad=True)
     for i in range(iterations):
         model.zero_grad()
@@ -70,8 +70,8 @@ if __name__ == "__main__":
     network = models.vgg19(pretrained=True)
     layers = list(network.features.children())
     model = nn.Sequential(*layers[: (args.at_layer + 1)])
-    if torch.cuda.is_available:
-        model = model.cuda()
+    # if torch.cuda.is_available:
+    #     model = model.cuda()
     print(network)
 
     # Extract deep dream image

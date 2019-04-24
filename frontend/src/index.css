@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+body {
+  margin: 0;
+}
+
+
+h1,h2,h3,h4,h5,h6,p,span {
+  font-family: 'Lato', sans-serif;
+  color: brown;
+}
+
+h1 {
+  margin-bottom: 75px;
+  font-size: 3em;
+}
+
+#credits {
+  margin: 40px;
+}
+
+.makemegreen {
+  color: green;
+}
+
+.FilePond {
+  cursor: pointer;
+}
+
+.app-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100vw;
+  background-color: #e0c7c7;
+}
+
+.spacer {
+  flex: 0 1 auto;
+}
+
+.upload {
+  margin: auto;
+}

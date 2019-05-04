@@ -14,8 +14,7 @@ from utils import deprocess, preprocess, clip
 
 def dream(image, model, iterations, lr):
     """ Updates the image to maximize outputs for n iterations """
-    Tensor = torch.FloatTensor
-    image = Variable(Tensor(image), requires_grad=True)
+    image = torch.tensor((image), requires_grad=True, dtype=torch.float)
     for i in range(iterations):
         model.zero_grad()
         out = model(image)
@@ -88,6 +87,4 @@ if __name__ == "__main__":
     os.makedirs("outputs", exist_ok=True)
     filename = args.input_image.split("/")[-1]
     plt.figure(figsize=(20, 20))
-    plt.imshow(dreamed_image)
     plt.imsave(f"outputs/output_{filename}", dreamed_image)
-    plt.show()

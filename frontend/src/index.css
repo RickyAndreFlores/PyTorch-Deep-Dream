@@ -4,6 +4,13 @@ body {
   margin: 0;
 }
 
+button {
+  height: 64px;
+  width: 264px;
+  font-size: 18px;
+  margin: 10px;
+  border-radius: 10px;
+}
 
 h1,h2,h3,h4,h5,h6,p,span {
   font-family: 'Lato', sans-serif;
